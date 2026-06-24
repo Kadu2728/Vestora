@@ -1,0 +1,36 @@
+{
+  "folders": [
+    { "name": "🖥️ Frontend (Next.js)", "path": "frontend" },
+    { "name": "⚙️ Backend (FastAPI)", "path": "backend" }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+      "**/.ruff_cache": true
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder:⚙️ Backend (FastAPI)}/.venv/bin/python",
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": ["tests"],
+    "[typescript][typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "charliermarsh.ruff"
+    ]
+  }
+}
