@@ -1,0 +1,27 @@
+﻿services:
+  - type: web
+    name: vestora-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "30"
+      - key: REFRESH_TOKEN_EXPIRE_DAYS
+        value: "7"
+      - key: TRIAL_DURATION_DAYS
+        value: "14"
+      - key: MARKET_DATA_BASE_URL
+        value: "https://brapi.dev/api"
+      - key: MARKET_DATA_CACHE_TTL_SECONDS
+        value: "60"
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
